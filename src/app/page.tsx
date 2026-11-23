@@ -5,7 +5,6 @@ import Highlights from "@/components/sections/Highlights";
 import Amenities from "@/components/sections/Amenities";
 import Interiors from "@/components/sections/Interiors";
 import FloorPlans from "@/components/sections/FloorPlans";
-import VirtualTour from "@/components/sections/VirtualTour";
 import Location from "@/components/sections/Location";
 import Security from "@/components/sections/Security";
 import Developer from "@/components/sections/Developer";
@@ -33,22 +32,19 @@ export default function Home() {
       {/* SEÇÃO 07 — PLANTAS E APARTAMENTOS */}
       <FloorPlans />
 
-      {/* SEÇÃO 08 — PASSEIO VIRTUAL */}
-      <VirtualTour />
-
-      {/* SEÇÃO 09 — LOCALIZAÇÃO */}
+      {/* SEÇÃO 08 — LOCALIZAÇÃO */}
       <Location />
 
-      {/* SEÇÃO 10 — SEGURANÇA E CONVENIÊNCIA */}
+      {/* SEÇÃO 09 — SEGURANÇA E CONVENIÊNCIA */}
       <Security />
 
-      {/* SEÇÃO 11 — SOBRE A LOTTICI */}
+      {/* SEÇÃO 10 — SOBRE A LOTTICI */}
       <Developer />
 
-      {/* SEÇÃO 12 — PERGUNTAS FREQUENTES */}
+      {/* SEÇÃO 11 — PERGUNTAS FREQUENTES */}
       <FAQ />
 
-      {/* SEÇÃO 13 — CTA FINAL */}
+      {/* SEÇÃO 12 — CTA FINAL */}
       <FinalCTA />
     </div>
   );

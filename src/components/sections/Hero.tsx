@@ -13,7 +13,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-[92vh] lg:min-h-screen flex items-center justify-start overflow-hidden bg-ares-deep pt-24 pb-16 lg:py-0"
+      className="relative min-h-[92vh] lg:min-h-screen flex items-center justify-start overflow-hidden bg-ares-deep pt-36 sm:pt-40 lg:pt-36 pb-20 lg:pb-24"
     >
       {/* Background Architectural Image */}
       <div className="absolute inset-0 z-0">
@@ -32,7 +32,7 @@ export default function Hero() {
       </div>
 
       {/* Content Container */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full mt-4 lg:mt-6">
         <div className="max-w-2xl lg:max-w-xl text-left">
           {/* Eyebrow badge */}
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white/95 text-xs font-medium uppercase tracking-[0.2em] mb-6">

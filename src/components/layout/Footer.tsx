@@ -94,11 +94,6 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="#tour" className="hover:text-white transition-colors">
-                  Passeio Virtual
-                </a>
-              </li>
-              <li>
                 <a href="#localizacao" className="hover:text-white transition-colors">
                   Localização
                 </a>

@@ -4,6 +4,7 @@ import React from "react";
 import Image from "next/image";
 import { MessageCircle, ArrowUpRight, CheckCircle2 } from "lucide-react";
 import { getWhatsAppUrl } from "@/lib/whatsapp";
+import { trackWhatsAppClick } from "@/lib/meta-tracking";
 
 export default function FinalCTA() {
   const whatsappUrl = getWhatsAppUrl(
@@ -62,6 +63,7 @@ export default function FinalCTA() {
             href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => trackWhatsAppClick("Final CTA - Quero falar sobre o Ares")}
             className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-full text-sm font-semibold tracking-wider uppercase bg-ares-gold hover:bg-ares-goldlight text-ares-deep shadow-2xl hover:shadow-ares-gold/20 transition-all duration-300 transform active:scale-95 focus:outline-none focus:ring-4 focus:ring-ares-gold/50"
           >
             <MessageCircle className="w-4 h-4 fill-ares-deep" />

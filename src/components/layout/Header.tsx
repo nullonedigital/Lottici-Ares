@@ -6,6 +6,7 @@ import Link from "next/link";
 import { Menu, X, PhoneCall } from "lucide-react";
 import { getWhatsAppUrl, CONSULTANT_WHATSAPP_MESSAGE } from "@/lib/whatsapp";
 import { SITE_CONFIG } from "@/lib/constants";
+import { trackWhatsAppClick } from "@/lib/meta-tracking";
 
 const NAV_LINKS = [
   { label: "O Ares", href: "#sobre" },
@@ -104,6 +105,7 @@ export default function Header() {
             href={consultantWhatsAppUrl}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => trackWhatsAppClick("Header CTA - Fale com um consultor")}
             className="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs md:text-sm font-medium tracking-wider uppercase bg-ares-architectural hover:bg-ares-deep text-white border border-white/20 shadow-md hover:shadow-lg transition-all duration-200 active:scale-95 focus:outline-none focus:ring-2 focus:ring-white/50"
           >
             <PhoneCall className="w-3.5 h-3.5 text-ares-gold" />
@@ -148,7 +150,10 @@ export default function Header() {
               href={consultantWhatsAppUrl}
               target="_blank"
               rel="noopener noreferrer"
-              onClick={() => setMobileMenuOpen(false)}
+              onClick={() => {
+                setMobileMenuOpen(false);
+                trackWhatsAppClick("Header Mobile CTA - Fale com um consultor");
+              }}
               className="w-full py-3.5 px-6 rounded-full text-center text-sm font-medium uppercase tracking-wider bg-ares-gold text-ares-deep shadow-md flex items-center justify-center gap-2"
             >
               <PhoneCall className="w-4 h-4" />

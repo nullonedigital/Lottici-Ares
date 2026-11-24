@@ -4,6 +4,7 @@ import React from "react";
 import Image from "next/image";
 import { ArrowDown, MessageCircle, Compass, BedDouble, Maximize2, MapPin } from "lucide-react";
 import { getWhatsAppUrl } from "@/lib/whatsapp";
+import { trackWhatsAppClick } from "@/lib/meta-tracking";
 
 export default function Hero() {
   const whatsappUrl = getWhatsAppUrl(
@@ -91,6 +92,7 @@ export default function Hero() {
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackWhatsAppClick("Hero CTA - Quero conhecer o Ares")}
               className="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-full text-sm font-semibold tracking-wide uppercase bg-ares-gold hover:bg-ares-goldlight text-ares-deep shadow-xl hover:shadow-2xl transition-all duration-300 transform active:scale-95 focus:outline-none focus:ring-4 focus:ring-ares-gold/50"
             >
               <MessageCircle className="w-4 h-4 fill-ares-deep" />

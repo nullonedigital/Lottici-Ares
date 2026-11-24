@@ -5,6 +5,7 @@ import { MapPin, Navigation, MessageCircle, Building2, Compass } from "lucide-re
 import SectionHeading from "@/components/shared/SectionHeading";
 import { SITE_CONFIG } from "@/lib/constants";
 import { getWhatsAppUrl, LOCATION_WHATSAPP_MESSAGE } from "@/lib/whatsapp";
+import { trackWhatsAppClick } from "@/lib/meta-tracking";
 
 export default function Location() {
   const whatsappUrl = getWhatsAppUrl(LOCATION_WHATSAPP_MESSAGE);
@@ -78,6 +79,7 @@ export default function Location() {
                 href={whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackWhatsAppClick("Location CTA - Quero conhecer a localização")}
                 className="inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-full text-sm font-semibold tracking-wide uppercase bg-ares-architectural hover:bg-ares-deep text-white shadow-lg hover:shadow-xl transition-all duration-200 active:scale-95 focus:outline-none focus:ring-4 focus:ring-ares-architectural/40 w-full sm:w-auto"
               >
                 <MessageCircle className="w-4 h-4 text-ares-gold" />

@@ -6,6 +6,7 @@ import Link from "next/link";
 import { Phone, MessageCircle, MapPin, Globe, Shield, ArrowUp, X } from "lucide-react";
 import { SITE_CONFIG } from "@/lib/constants";
 import { getWhatsAppUrl } from "@/lib/whatsapp";
+import { trackWhatsAppClick } from "@/lib/meta-tracking";
 
 export default function Footer() {
   const [privacyModalOpen, setPrivacyModalOpen] = useState(false);
@@ -116,6 +117,7 @@ export default function Footer() {
                 href={getWhatsAppUrl()}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackWhatsAppClick("Footer CTA - WhatsApp de Vendas")}
                 className="flex items-center gap-3 hover:text-emerald-400 transition-colors group"
               >
                 <div className="w-8 h-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-emerald-500/20 group-hover:border-emerald-500/40 transition-colors">

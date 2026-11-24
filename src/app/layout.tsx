@@ -6,6 +6,7 @@ import { SITE_CONFIG } from "@/lib/constants";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import WhatsAppFloat from "@/components/shared/WhatsAppFloat";
+import MetaPageViewTracker from "@/components/shared/MetaPageViewTracker";
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
@@ -92,6 +93,8 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const gtmId = process.env.NEXT_PUBLIC_GTM_ID || "GTM-KMVZBDT5";
+
   return (
     <html lang="pt-BR" className={`${cormorant.variable} ${inter.variable} scroll-smooth`}>
       <head>
@@ -105,7 +108,7 @@ export default function RootLayout({
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-KMVZBDT5');`,
+})(window,document,'script','dataLayer','${gtmId}');`,
           }}
         />
         {/* End Google Tag Manager */}
@@ -114,13 +117,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         {/* Google Tag Manager (noscript) */}
         <noscript>
           <iframe
-            src="https://www.googletagmanager.com/ns.html?id=GTM-KMVZBDT5"
+            src={`https://www.googletagmanager.com/ns.html?id=${gtmId}`}
             height="0"
             width="0"
             style={{ display: "none", visibility: "hidden" }}
           />
         </noscript>
         {/* End Google Tag Manager (noscript) */}
+        <MetaPageViewTracker />
         <Header />
         <main id="main-content" className="flex-1">
           {children}

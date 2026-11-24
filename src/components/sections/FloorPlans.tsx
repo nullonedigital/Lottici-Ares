@@ -15,6 +15,7 @@ import {
 import SectionHeading from "@/components/shared/SectionHeading";
 import { FLOOR_PLANS, FloorPlan } from "@/data/floorPlans";
 import { getWhatsAppUrl } from "@/lib/whatsapp";
+import { trackWhatsAppClick } from "@/lib/meta-tracking";
 
 export default function FloorPlans() {
   const [selectedPlanId, setSelectedPlanId] = useState<string>("tipo-d");
@@ -175,6 +176,13 @@ export default function FloorPlans() {
                   href={whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() =>
+                    trackWhatsAppClick(`Plantas CTA - ${currentPlan.name}`, {
+                      floor_plan: currentPlan.name,
+                      area: currentPlan.area,
+                      bedrooms: currentPlan.bedrooms,
+                    })
+                  }
                   className="w-full inline-flex items-center justify-center gap-2.5 px-6 py-4 rounded-full text-sm font-semibold tracking-wide uppercase bg-ares-architectural hover:bg-ares-deep text-white shadow-lg hover:shadow-xl transition-all duration-200 active:scale-95 focus:outline-none focus:ring-4 focus:ring-ares-architectural/40"
                 >
                   <MessageCircle className="w-4 h-4 text-ares-gold" />
@@ -223,6 +231,13 @@ export default function FloorPlans() {
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() =>
+                trackWhatsAppClick(`Plantas Modal CTA - ${currentPlan.name}`, {
+                  floor_plan: currentPlan.name,
+                  area: currentPlan.area,
+                  bedrooms: currentPlan.bedrooms,
+                })
+              }
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-ares-gold text-ares-deep font-semibold uppercase tracking-wider text-xs"
             >
               <MessageCircle className="w-3.5 h-3.5" />

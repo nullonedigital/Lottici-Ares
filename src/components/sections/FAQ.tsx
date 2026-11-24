@@ -5,6 +5,7 @@ import { ChevronDown, MessageCircle, HelpCircle } from "lucide-react";
 import SectionHeading from "@/components/shared/SectionHeading";
 import { FAQS } from "@/data/property";
 import { getWhatsAppUrl } from "@/lib/whatsapp";
+import { trackWhatsAppClick } from "@/lib/meta-tracking";
 
 export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
@@ -90,6 +91,7 @@ export default function FAQ() {
             href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => trackWhatsAppClick("FAQ CTA - Falar com especialista")}
             className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-ares-deep hover:bg-ares-architectural text-white text-xs sm:text-sm font-semibold uppercase tracking-wider transition-all duration-200 shadow-md hover:shadow-lg shrink-0"
           >
             <MessageCircle className="w-4 h-4 text-ares-gold" />

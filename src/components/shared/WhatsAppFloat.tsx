@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { getWhatsAppUrl } from "@/lib/whatsapp";
 import { SITE_CONFIG } from "@/lib/constants";
+import { trackWhatsAppClick } from "@/lib/meta-tracking";
 
 export default function WhatsAppFloat() {
   const [isHovered, setIsHovered] = useState(false);
@@ -33,6 +34,7 @@ export default function WhatsAppFloat() {
         href={whatsappUrl}
         target="_blank"
         rel="noopener noreferrer"
+        onClick={() => trackWhatsAppClick("Floating Button - WhatsApp Float")}
         aria-label="Conversar pelo WhatsApp da equipe de vendas Residencial Ares"
         className="group relative flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-full drop-shadow-xl hover:drop-shadow-2xl transition-all duration-300 hover:scale-105 active:scale-95 focus:outline-none focus:ring-4 focus:ring-emerald-400/50"
       >
